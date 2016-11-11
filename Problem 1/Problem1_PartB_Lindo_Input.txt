@@ -1,13 +1,25 @@
+!Project 3 Problem 1 Part B - Removed Warehouse 2 (W2)
 MIN 10 P1W1 + 11 P2W1 + 13 P3W1 + 9 P3W3 + 8 P4W3 + 5 R1W1 + 6 R2W1 + 7 R3W1 + 10 R4W1 + 14 R4W3 + 12 R5W3 + 12 R6W3 + 6 R7W3 
 ST
+	!Warehouse Constraint
 	P1W1 + P2W1 + P3W1 - R1W1 - R2W1 - R3W1 - R4W1 >= 0
+	! Answer =================================================================
+	!The below warehouse constraint leads to no solution without warehouse 2
+	! This is because 
+	! P3W3 + P4W3 can provide at most 400 refrigerators while
+	! R4W3 + R5W3 + R6W3 + R7W3 require at least 450 refridgerators
+	! therefore the below constraint is never true and leads to a negative 50.
+	! Lindo throws error 54 "no solution" as a result.
+	! ========================================================================
 	P3W3 + P4W3 - R4W3 - R5W3 - R6W3 - R7W3 >= 0
 
+	!Supply Constraint
 	P1W1 <= 150
 	P2W1 <= 450
 	P3W1 + P3W3 <= 250
 	P4W3 <= 150
 
+	!Demand Constraint
 	R1W1 >= 100
 	R2W1 >= 150
 	R3W1 >= 100

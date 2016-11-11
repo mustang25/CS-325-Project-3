@@ -1,14 +1,18 @@
+!Project 3 Problem 1 Part A
 MIN 10 P1W1 + 15 P1W2 + 11 P2W1 + 15 P2W2 + 13 P3W1 + 8 P3W2 + 9 P3W3 + 14 P4W2 + 8 P4W3 + 5 R1W1 + 6 R2W1 + 7 R3W1 + 10 R4W1 + 12 R3W2 + 8 R4W2 + 10 R5W2 + 14 R6W2 + 14 R4W3 + 12 R5W3 + 12 R6W3 + 6 R7W3 
 ST
+	!Warehouse Constraint
 	P1W1 + P2W1 + P3W1 - R1W1 - R2W1 - R3W1 - R4W1 >= 0
 	P1W2 + P2W2 + P3W2 + P4W2 - R3W2 - R4W2 - R5W2 - R6W2 >= 0
 	P3W3 + P4W3 - R4W3 - R5W3 - R6W3 - R7W3 >= 0
 
+	!Supply Constraint
 	P1W1 + P1W2 <= 150
 	P2W1 + P2W2 <= 450
 	P3W1 + P3W2 + P3W3 <= 250
 	P4W2 + P4W3 <= 150
 
+	!Demand Constraint
 	R1W1 >= 100
 	R2W1 >= 150
 	R3W1 + R3W2 >= 100
